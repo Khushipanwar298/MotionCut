@@ -1,0 +1,657 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+html{
+    scroll-behavior: smooth;
+
+}
+
+
+            /* navbar design */
+
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem .1rem;
+    background-color: #ddd8d8cf;
+    backdrop-filter: blur(5px);
+}
+
+a:first-child{
+    margin-right: auto;
+    font-size: 2.4rem;
+    font-style: italic;
+    font-weight: 800;
+}
+
+nav a{
+    font-size: 1.6rem;
+    text-decoration: none;
+    font-weight: 700;
+    color: #000000b9;
+    margin: 0 2rem;
+    position: relative;  /* to relate to anchor position*/
+}
+
+nav a::after{  /* pseudo class for animation of underline*/
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    background-color: #000000b9;
+    transition: 1s all ease;
+   
+
+}
+
+nav a:hover::after{  /* on hover*/
+    width: 100%;
+    
+}
+nav .logo:hover::after{  /* on hover for icon*/
+    width: 0%;
+    
+}
+
+            /* for mobile nav */
+
+
+nav  i{
+    font-size: 2rem;
+    background-color: transparent;
+    
+
+}
+.menuIcon i{
+    display: none;
+
+}
+
+.forMobile{
+    position: fixed;
+    top: 11%;
+    right: 0;
+    min-height: 98vh;
+    width: 270px;
+    background: none;
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+     
+  
+  }
+
+  .forMobile a{
+      margin-bottom: 2rem;
+      width: 100%;
+      padding: 1rem;
+     
+  }
+  .forMobile a:hover{
+      background-color: #22222220;
+  
+  }
+  .forMobile a:hover::after{
+      width: 0%;
+  
+  }
+  
+
+
+
+        /* container style */
+
+
+
+#container{
+    min-height: 100vh;   
+    background-color: #ffffffac;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 .3rem #000;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.images{
+    width: 50%;
+    height: auto;
+    margin: 1rem; 
+}
+.images img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 7px;
+    box-shadow: 0 0 .3rem #000;
+ }
+
+#container .details{
+    width: 35%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.5rem .6rem;
+    border-radius: 7px;
+}
+
+.details h2{
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.details h3{
+    font-size: 1.5rem;
+    animation: popUp linear infinite 1.5s;
+    padding: .2rem;
+
+}
+
+.details p{
+    font-size: .96rem;
+    line-height: 1.6;
+    font-weight: 500;
+    margin-bottom: .5rem;
+    width: 90%;
+    padding: 1rem;
+}
+
+.details button{
+    border: 2px solid rgb(82, 138, 241);
+    outline: none;
+    background-color: rgb(77, 135, 244);
+    font-size: 1.2rem;
+    padding: .7rem;
+    border-radius: 7px;
+    width: 300px;
+    color: #fff;
+    font-weight: 700;
+    transition: .2s ease-in-out;
+}
+.details button:hover{
+    box-shadow: 0 0 .5rem rgb(82, 135, 232);
+    cursor: pointer;
+}
+
+@keyframes popUp {
+    100%{
+        font-weight: 400;
+        color: red;
+        
+    }
+    
+    50%{
+        font-weight: 500;
+        color: red;
+        
+    }
+    
+}
+
+            /* description design */
+
+.description{
+    min-height: 100vh;
+    text-align: center;
+    background-color: #ffffffac;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;    
+}
+
+.description .about{
+    width: 50%;
+    height: 90%;
+    border-radius: 7px;
+    padding: 1rem;
+    margin: .7rem;
+}
+
+.about h2{
+    font-weight: bolder;
+    font-size: 1.9rem;
+}
+
+.about p{
+   font-size: .9rem;
+   padding: .3rem;
+   font-weight: 500;
+   line-height: 1.5;
+}
+.description .video{
+    width: 50%;
+    height: 90%;
+    border-radius: 7px;
+    margin: .7rem;
+}
+
+.video video{
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+}
+
+.description .table{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+th,tr td{
+    padding: 1rem;
+    font-size: 1.04rem;
+    font-weight: 500;
+    background-color: #bebaba55;
+    border-bottom: 1px solid #000;
+}
+
+th{
+    font-weight: 800;
+}
+
+
+            /* testimonials style */
+
+#testimonials{
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    text-align: center;
+    background-color: #ffffffac;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 .3rem #000;
+}
+
+
+#testimonials .imagesBox{
+    padding: .5rem;
+    height: auto;
+    margin: .3rem .9rem;
+    background-color: #e6e6e641;
+    backdrop-filter: blur(3px);
+    border-radius: 9px;
+    transition: .5s all ease-in-out;
+    box-shadow: 0 0 .3rem #000;
+  
+
+    
+}
+#testimonials .imagesBox:hover{
+    transform: rotate(-1deg);
+    
+}
+
+.imagesBox img{
+    width: 30%;
+    height: auto;
+    transition: .3s all ease-in-out;
+
+}
+.imagesBox h4{
+    font-weight: 800;
+}
+
+.imagesBox .boxDetails{
+    padding: .6rem;
+}
+
+.boxDetails h4{
+font-size: .9rem;
+font-weight: 600;
+
+}
+
+.boxDetails p{
+    font-size: .9rem;
+    padding: .3rem;
+    line-height: 1.5;
+    
+}
+
+
+/* FAQ style */
+
+#FAQ{
+    height: 100vh;
+    background-color: #ffffffac;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+#FAQ .FAQ{
+    width: 100%;
+}
+
+.FAQ h3{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.FAQ ul{
+    padding: 1rem;
+    line-height: 1.7;
+}
+
+.FAQ li{
+    list-style: none;
+    font-size: 1.2rem;
+    border-bottom: 1px solid black;
+    padding: .5rem;
+    font-weight: 500;
+
+}
+
+li span{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgb(101, 88, 88);
+}
+span::after{
+    content: " :";
+    padding-right: .2rem;
+}
+
+footer{
+    background-color: #ddd8d8cf;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 .3rem #000;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.footerItems p{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+
+.icon a,i{
+    font-size: 1.8rem;
+    color: #090808;
+    margin: .2rem .8rem;
+    transition: .5s ease-in-out all;
+    cursor: pointer;
+    padding: .2rem;
+    border-radius: 50%;
+    
+}
+
+a i:hover{
+    box-shadow: 0 0 .5rem #000000d6;
+}
+
+
+@media (max-width: 1400px){
+    html{
+        font-size: 93%;
+    }
+
+}
+@media (max-width: 1200px){
+    html{
+        font-size: 89%;
+    }
+    .details h2{
+        font-size: 2rem;
+    }
+    .details p{
+        font-size: .9rem;
+        width: 95%;
+  
+    }
+
+    .details button{
+        width: 270px;
+        font-size: 1rem;
+    }
+
+    .details h3{
+        font-size: 1.4rem;
+    }
+
+    .about h2{
+        font-size: 1.9rem;
+
+    }
+    .about p{
+        font-size: .8rem;
+    }
+    th,tr td{
+        padding: .9rem;
+        font-size: 1rem;
+    }
+    .FAQ h3{
+        font-size: 1.9rem;
+    }
+    .FAQ li{
+        font-size: 1.1rem;
+    }
+    .FAQ span{
+        font-size: 1.1rem;
+    }
+
+}
+
+@media (max-width : 930px){
+    #container{
+        flex-direction: column;
+    }
+
+    #container .images{
+        width: 55%;
+        height: auto;
+
+    }
+
+    #container .details{
+        width: 100%;
+    }
+
+  .details h2{
+    font-size: 1.6rem;
+}
+    .details h3{
+        font-size: 1.4rem;
+    }
+    .details p{
+        width: 60%;
+    }
+    .details button{
+        width: 300px;
+    }
+    .description{
+        flex-direction: column;
+    }
+    .description .about{
+        width: 100%;
+        height: 100%;
+    }
+    .table tbody{
+        width: 100%;
+    }
+
+
+.description .video{
+    width: 90%;
+    height: 100%;
+    border-radius: 7px;
+    margin: .7rem;
+}
+
+    .FAQ li{
+        font-size: 1rem;
+    }
+    .FAQ span{
+        font-size: 1.03rem;
+    }
+
+    }
+
+@media (max-width : 768px){
+    .hideOnMobile{
+        display: none;
+    }
+    .wideScreen .logo{
+        font-size: 1.8rem;
+    }
+    
+    .menuIcon i{
+        display: block;
+        font-size: 1.7rem;
+    }
+    .forMobile a:hover:first-child{
+        background-color: #716c6c62;
+        width: 20%;
+        box-shadow: none;
+        backdrop-filter: blur(0px);
+        
+    }
+    .forMobile a{
+        font-size: 1.25rem;
+    }
+    #container .images{
+        width: 70%;
+        height: auto;
+
+    }
+  
+
+    .details h2{
+        font-size: 1.7rem;
+    }
+
+    .details p{
+        font-size: .85rem;
+        width: 70%;
+    }
+
+    .details button{
+        width: 310px;
+    }
+
+    #testimonials{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    
+    .boxDetails h4{
+    font-size: .7rem;
+    font-weight: 600;
+    
+    }
+    
+    .boxDetails p{
+        font-size: .9rem;
+        
+    }
+
+    .FAQ h3{
+        font-size: 1.7rem;
+    }
+
+    .FAQ li{
+        font-size: .9rem;
+    }
+    .FAQ span{
+        font-size: .87rem;
+    }
+
+
+
+}
+
+@media (max-width:578px){
+    
+    #testimonials{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .imagesBox img{
+        width: 17%;
+    }
+    #container .images{
+        width: 90%;
+        height: auto;
+
+    }
+
+
+  .details h2{
+    font-size: 1.8rem;
+}
+    .details h3{
+        font-size: 1.56rem;
+    }
+    .details p{
+        width: 95%;
+    }
+    .details button{
+        width: 280px;
+    }
+    .footerItems p{
+        font-size: 1.07rem;
+    }
+    
+    
+    .icon a,i{
+        font-size: 1.5rem;
+        margin: .2rem .8rem;
+        padding: .1rem;
+        
+    }
+
+}
+
+
+@media (max-width: 448px){
+
+    .forMobile{
+        min-height: 100vh;
+        width: 100%;
+    }
+
+}
+@media (max-width: 358px){
+
+    .images{
+        width: 100%;
+    }
+
+    .details p{
+        width: 100%;
+    }
+    .imagesBox img{
+        width: 30%;
+    }
+    .FAQ h3{
+        font-size: 1.5rem;
+    }
+}
